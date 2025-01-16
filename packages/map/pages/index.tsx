@@ -170,7 +170,13 @@ const FlagIcon = ({ code }: FlagIconProperties) => {
 					let lang = code.toUpperCase();
 					if (lang === "EN") lang = "GB";
 					if (lang === "EU") {
+						// EU servers are gone now, unsure if this should be left here
 						setComponent(() => EUFlag);
+						return;
+					}
+
+					if (lang === "INT") {
+						setComponent(() => EUFlag); // Replace with globe flag
 						return;
 					}
 
