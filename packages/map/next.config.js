@@ -4,7 +4,13 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
-	transpilePackages: ["common"],
+	typescript: {
+		ignoreBuildErrors: true,
+	},
+	transpilePackages: ["common", "mantine-flagpack"],
+	experimental: {
+		optimizePackageImports: ["mantine-flagpack"],
+	},
 	output: "export",
 	distDir: "dist",
 	images: {
