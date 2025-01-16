@@ -77,6 +77,11 @@ export default function Home() {
 				{!servers && "Loading servers..."}
 				<div className={styles.serverList}>
 					{servers?.map((server: Server) => {
+						const match = server.ServerCode.match(/\d/);
+						const code = match
+							? server.ServerCode.slice(0, server.ServerCode.indexOf(match[0]))
+							: "INT"; // fallback to international
+
 						return (
 							<a
 								id={server.ServerCode}
@@ -89,9 +94,7 @@ export default function Home() {
 									className={`${styles.statusIndicator} ${getStatusIndicatorStyle(server)}`}
 								/>
 								<span className="serverName">
-									<FlagIcon
-										code={server.ServerCode.slice(0, 2).toUpperCase()}
-									/>
+									<FlagIcon code={code} />
 									<span>{server.ServerName}</span>
 								</span>
 							</a>
@@ -167,7 +170,13 @@ const FlagIcon = ({ code }: FlagIconProperties) => {
 					let lang = code.toUpperCase();
 					if (lang === "EN") lang = "GB";
 					if (lang === "EU") {
+						// EU servers are gone now, unsure if this should be left here
 						setComponent(() => EUFlag);
+						return;
+					}
+
+					if (lang === "INT") {
+						setComponent(() => EUFlag); // Replace with globe flag
 						return;
 					}
 
