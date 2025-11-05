@@ -138,6 +138,8 @@ const TrainText = ({
 	// only the first unit is responsible for train traction at the moment, so this is just safe to assume // Not true anymore,-
 	// don't think it was true before update either as EMUs prob had multiple traction
 
+	const roundedSpeed = Math.round(train.TrainData.Velocity);
+
 	// however, this might be wrong in case the first unit is not yet registered in railcars.json, so we just
 	// fall back to displaying the raw api name in that case
 	const tractionUnit = locomotives.at(0);
@@ -242,8 +244,17 @@ const TrainText = ({
 			{!minified && <Title order={3}>Route </Title>}
 			{train.StartStation} - {train.EndStation}
 			<br />
-			Speed: {Math.round(train.TrainData.Velocity)} km/h
-			<br />
+			{roundedSpeed === 0 ? (
+				<>
+					Train currently stopped
+					<br />
+				</>
+			) : (
+				<>
+					Speed: {roundedSpeed} km/h
+					<br />
+				</>
+			)}
 			Vmax: {minMaxSpeed} km/h
 			<br />
 			{!minified && (
