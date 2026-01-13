@@ -59,11 +59,11 @@ export default function SpotlightSearch({
 		const platforms = [];
 		for (let i = 0; i < trains.length; i++) {
 			if (trains[i].Type === "user" && trains[i] != null) {
-				if (trains[i].TrainData.ControlledBySteamID != "null") {
+				if (trains[i].TrainData.ControlledBySteamID) {
 					userIDs.push(trains[i].TrainData.ControlledBySteamID);
 					platforms.push("steam");
 				}
-				else if (trains[i].TrainData.ControlledByXboxID != "null") {
+				else if (trains[i].TrainData.ControlledByXboxID) {
 					userIDs.push(trains[i].TrainData.ControlledByXboxID);
 					platforms.push("xbox");
 				}
