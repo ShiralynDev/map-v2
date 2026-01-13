@@ -59,11 +59,11 @@ export default function SpotlightSearch({
 		const platforms = [];
 		for (let i = 0; i < trains.length; i++) {
 			if (trains[i].Type === "user" && trains[i] != null) {
-				if (trains[i].TrainData.ControlledBySteamID != null) {
+				if (trains[i].TrainData.ControlledBySteamID != "null") {
 					userIDs.push(trains[i].TrainData.ControlledBySteamID);
 					platforms.push("steam");
 				}
-				if (trains[i].TrainData.ControlledByXboxID != null) {
+				else if (trains[i].TrainData.ControlledByXboxID != "null") {
 					userIDs.push(trains[i].TrainData.ControlledByXboxID);
 					platforms.push("xbox");
 				}
@@ -93,8 +93,7 @@ export default function SpotlightSearch({
 							usernamesCache.current.get(train.TrainData.ControlledBySteamID) ??
 							"Unknown";
 					}
-
-					if (train.TrainData.ControlledByXboxID) {
+					else if (train.TrainData.ControlledByXboxID) {
 						username = "Unknown [XBOX]" // make function for getting xbox usernames
 					}
 
