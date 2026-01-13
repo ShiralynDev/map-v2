@@ -62,5 +62,17 @@
 	{
 		"code": "int9",
 		"offsetSeconds": 0
+	},
+	{
+		"code": "xbx1",
+		"offsetSeconds": 0
+	},
+	{
+		"code": "xbx2",
+		"offsetSeconds": 0
+	},
+	{
+		"code": "xbx3",
+		"offsetSeconds": 0
 	}
 ]

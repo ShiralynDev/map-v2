@@ -28,7 +28,7 @@ const SelectedTrainPopup = () => {
 	// biome-ignore lint/correctness/useExhaustiveDependencies:
 	useEffect(() => {
 		if (selectedTrain)
-			getSteamProfileOrBot(selectedTrain.TrainData.ControlledBySteamID).then(
+			getSteamProfileOrBot(selectedTrain.TrainData.ControlledBySteamID).then( // support xbox players
 				// @ts-ignore
 				setData,
 			);

@@ -14,10 +14,12 @@ type SpotlightSearchProps = {
 
 class user {
 	username = "";
-	steamID = "";
-	constructor(username: string, steamID: string) {
+	ID = "";
+	platform = "";
+	constructor(username: string, ID: string, platform: string) {
 		this.username = username;
-		this.steamID = steamID;
+		this.ID = ID;
+		this.platform = platform;
 	}
 }
 export const usernames: user[] = [];
@@ -34,13 +36,14 @@ export default function SpotlightSearch({
 	const usernamesCache = useRef<Map<string, string>>(new Map());
 	const [open, setOpen] = useState(false);
 
-	async function getUsernames(userIDs: (string | null | undefined)[]) {
+	async function getUsernames(userIDs: (string | null | undefined)[], platforms: (string | null | undefined)[]) {
 		for (let i = 0; i < userIDs.length; i++) {
-			const steamID = userIDs[i];
-			if (steamID && !usernamesCache.current.has(steamID)) {
-				const profile = await getSteamProfileOrBot(steamID);
+			const platform = platforms[i];
+			const ID = userIDs[i];
+			if (platform === "steam" && ID && !usernamesCache.current.has(ID)) {
+				const profile = await getSteamProfileOrBot(ID);
 				if (profile[1]) {
-					usernamesCache.current.set(steamID, profile[1]);
+					usernamesCache.current.set(ID, profile[1]);
 				}
 			}
 		}
@@ -53,16 +56,31 @@ export default function SpotlightSearch({
 		if (!open) return;
 
 		const userIDs = [];
+		const platforms = [];
 		for (let i = 0; i < trains.length; i++) {
-			if (trains[i].Type === "user" && trains[i] != null)
-				userIDs.push(trains[i].TrainData.ControlledBySteamID);
+			if (trains[i].Type === "user" && trains[i] != null) {
+				if (trains[i].TrainData.ControlledBySteamID != null) {
+					userIDs.push(trains[i].TrainData.ControlledBySteamID);
+					platforms.push("steam");
+				}
+				if (trains[i].TrainData.ControlledByXboxID != null) {
+					userIDs.push(trains[i].TrainData.ControlledByXboxID);
+					platforms.push("xbox");
+				}
+			}
 		}
 		for (let i = 0; i < stations.length; i++) {
-			if (stations[i].DispatchedBy[0])
+			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].SteamId != null) {
 				userIDs.push(stations[i].DispatchedBy[0].SteamId);
+				platforms.push("steam")
+			}
+			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].XboxId != null) {
+				userIDs.push(stations[i].DispatchedBy[0].XboxId);
+				platforms.push("xbox")
+			}
 		}
 
-		getUsernames(userIDs);
+		getUsernames(userIDs, platforms);
 
 		if (trains) {
 			actionsGroups.push({
@@ -74,6 +92,10 @@ export default function SpotlightSearch({
 						username =
 							usernamesCache.current.get(train.TrainData.ControlledBySteamID) ??
 							"Unknown";
+					}
+
+					if (train.TrainData.ControlledByXboxID) {
+						username = "Unknown [XBOX]" // make function for getting xbox usernames
 					}
 
 					return {
@@ -95,10 +117,14 @@ export default function SpotlightSearch({
 				actions: stations.map((station, index) => {
 					let username = "Bot";
 
-					if (station.DispatchedBy[0]) {
+					if (station.DispatchedBy[0] && station.DispatchedBy[0].SteamId) {
 						username =
 							usernamesCache.current.get(station.DispatchedBy[0].SteamId) ??
 							"Unknown";
+					}
+
+					if (station.DispatchedBy[0] && station.DispatchedBy[0].XboxId) {
+						username = "Unknown [XBOX]" // make function for getting xbox usernames https://panel.simrail.eu:8084/users-open/
 					}
 
 					return {

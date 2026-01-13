@@ -21,12 +21,18 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 	useEffect(() => {
 		async function getData() {
 			if (station.DispatchedBy[0]) {
-				const avatarRequest = await fetch(
-					`https://simrail-edr.emeraldnetwork.xyz/steam/${station.DispatchedBy[0].SteamId}`,
-				);
-				const profile: ProfileResponse = await avatarRequest.json();
-				setAvatar(profile.avatar);
-				setUsername(profile.personaname);
+				if (station.DispatchedBy[0].SteamId != "null") {
+					const avatarRequest = await fetch(
+						`https://simrail-edr.emeraldnetwork.xyz/steam/${station.DispatchedBy[0].SteamId}`,
+					);
+					const profile: ProfileResponse = await avatarRequest.json();
+					setAvatar(profile.avatar);
+					setUsername(profile.personaname);
+				}
+				if (station.DispatchedBy[0].XboxId != "null") {
+					setAvatar(null);
+					setUsername("Unknown [XBOX]");
+				}
 			} else {
 				setAvatar(null);
 				setUsername("BOT");
