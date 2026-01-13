@@ -92,8 +92,16 @@ export default function Home() {
 								<span className="serverName">
 									<FlagIcon
 										code={
-											server.ServerCode.match(/[A-Za-z]+/)?.at(0) ??
-											server.ServerCode.slice(0, 2)
+											(() => {
+												const letters =
+													server.ServerCode.match(/[A-Za-z]+/)?.at(0) ??
+													server.ServerCode.slice(0, 2);
+												if (letters.toUpperCase() === "XBX") {
+													const numMatch = server.ServerCode.match(/^XBX(\d+)/i);
+													return numMatch ? `XBX${numMatch[1]}` : "XBX";
+												}
+												return letters;
+											})()
 										}
 									/>
 									<span>{server.ServerName}</span>
@@ -170,6 +178,10 @@ const FlagIcon = ({ code }: FlagIconProperties) => {
 					const flagPack = mod as unknown as FlagPackType;
 
 					let lang = code.toUpperCase();
+
+					if (lang === "XBX1") lang = "PL";
+					if (lang === "XBX2") lang = "INT";
+					if (lang === "XBX3") lang = "INT";
 					if (lang === "EN") lang = "GB";
 					if (lang === "EU") {
 						setComponent(() => EUFlag);
