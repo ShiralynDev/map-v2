@@ -72,11 +72,11 @@ export default function SpotlightSearch({
 		for (let i = 0; i < stations.length; i++) {
 			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].SteamId != null) {
 				userIDs.push(stations[i].DispatchedBy[0].SteamId);
-				platforms.push("steam")
+				platforms.push("steam");
 			}
 			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].XboxId != null) {
 				userIDs.push(stations[i].DispatchedBy[0].XboxId);
-				platforms.push("xbox")
+				platforms.push("xbox");
 			}
 		}
 
