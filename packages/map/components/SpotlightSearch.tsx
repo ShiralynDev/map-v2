@@ -5,7 +5,7 @@ import { LatLng } from "leaflet";
 import { useEffect, useRef, useState } from "react";
 import { MdSearch } from "react-icons/md";
 import { useMap } from "react-leaflet";
-import { getSteamProfileOrBot } from "./steam";
+import { getSteamProfileOrBot } from "./profile";
 
 type SpotlightSearchProps = {
 	trains: Train[];
@@ -57,6 +57,7 @@ export default function SpotlightSearch({
 
 		const userIDs = [];
 		const platforms = [];
+		console.log(trains)
 		for (let i = 0; i < trains.length; i++) {
 			if (trains[i].Type === "user" && trains[i] != null) {
 				if (trains[i].TrainData.ControlledBySteamID) {
@@ -70,11 +71,12 @@ export default function SpotlightSearch({
 			}
 		}
 		for (let i = 0; i < stations.length; i++) {
-			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].SteamId != null) {
+			console.log(stations[i])
+			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].SteamId != "null") {
 				userIDs.push(stations[i].DispatchedBy[0].SteamId);
 				platforms.push("steam");
 			}
-			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].XboxId != null) {
+			else if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].XboxId != "null") {
 				userIDs.push(stations[i].DispatchedBy[0].XboxId);
 				platforms.push("xbox");
 			}
@@ -87,7 +89,6 @@ export default function SpotlightSearch({
 				group: "Trains",
 				actions: trains.map((train, index) => {
 					let username = "Bot";
-
 					if (train.TrainData.ControlledBySteamID) {
 						username =
 							usernamesCache.current.get(train.TrainData.ControlledBySteamID) ??
@@ -116,13 +117,12 @@ export default function SpotlightSearch({
 				actions: stations.map((station, index) => {
 					let username = "Bot";
 
-					if (station.DispatchedBy[0] && station.DispatchedBy[0].SteamId) {
+					if (station.DispatchedBy[0] && station.DispatchedBy[0].SteamId !== "null") {
 						username =
 							usernamesCache.current.get(station.DispatchedBy[0].SteamId) ??
 							"Unknown";
 					}
-
-					if (station.DispatchedBy[0] && station.DispatchedBy[0].XboxId) {
+					else if (station.DispatchedBy[0] && station.DispatchedBy[0].XboxId !== "null") {
 						username = "Unknown [XBOX]" // make function for getting xbox usernames https://panel.simrail.eu:8084/users-open/
 					}
 

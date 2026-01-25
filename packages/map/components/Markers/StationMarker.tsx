@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Marker, Popup, Tooltip } from "react-leaflet";
 import type { ProfileResponse } from "types/SteamProfile";
+import type { XboxProfileResponse } from "types/XboxProfile";
 import stationsList from "../EDR_station.json";
 
 type StationMarkerProps = {
@@ -21,17 +22,24 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 	useEffect(() => {
 		async function getData() {
 			if (station.DispatchedBy[0]) {
-				if (station.DispatchedBy[0].SteamId != "null") {
+				if (station.DispatchedBy[0].SteamId != null) {
 					const avatarRequest = await fetch(
 						`https://simrail-edr.emeraldnetwork.xyz/steam/${station.DispatchedBy[0].SteamId}`,
 					);
 					const profile: ProfileResponse = await avatarRequest.json();
 					setAvatar(profile.avatar);
 					setUsername(profile.personaname);
-				}
-				if (station.DispatchedBy[0].XboxId != "null") {
+				} else if (station.DispatchedBy[0].XboxId != null) {
+					const avatarRequest = await fetch(
+						`https://panel.simrail.eu:8084/users-open/${station.DispatchedBy[0].XboxId}`,
+					);
+					const response: XboxProfileResponse = await avatarRequest.json();
+					const profile = response.data && response.data.length > 0 ? response.data[0] : null;
 					setAvatar(null);
-					setUsername("Unknown [XBOX]");
+					setUsername(profile?.XboxInfo?.Gamertag ?? "Unknown");
+				} else {
+					setAvatar(null); // xbox currently bugged and sometimes not give any ID
+					setUsername("Unknown");
 				}
 			} else {
 				setAvatar(null);

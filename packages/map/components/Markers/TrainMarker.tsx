@@ -1,4 +1,4 @@
-import { getSteamProfileOrBot } from "@/components/steam";
+import { getSteamProfileOrBot, getXboxProfile } from "@/components/profile";
 import { useMantineColorScheme } from "@mantine/core";
 import type { Train } from "@simrail/types";
 import L from "leaflet";
@@ -18,18 +18,35 @@ const TrainMarker = ({ train }: TrainMarkerProps) => {
 	const [avatar, setAvatar] = useState<string | null>(null);
 	const [username, setUsername] = useState<string | null>(null);
 
-	const getData = React.useCallback((maybeSteamId: string | null) => {
-		return getSteamProfileOrBot(maybeSteamId).then(([avatarUrl, username]) => {
-			setAvatar(avatarUrl);
-			setUsername(username);
-		});
-	}, []);
-
 	useEffect(() => {
-		getData(train.TrainData.ControlledBySteamID).catch(() =>
-			setTimeout(() => getData(train.TrainData.ControlledBySteamID), 1000),
-		);
-	}, [train.TrainData.ControlledBySteamID, getData]);
+		const fetchProfile = async () => {
+			try {
+				if (train.TrainData.ControlledBySteamID) {
+					const [avatarUrl, username] = await getSteamProfileOrBot(
+						train.TrainData.ControlledBySteamID,
+					);
+					setAvatar(avatarUrl);
+					setUsername(username);
+				} else if (train.TrainData.ControlledByXboxID) {
+					const [avatarUrl, username] = await getXboxProfile(
+						train.TrainData.ControlledByXboxID,
+					);
+					setAvatar(avatarUrl);
+					setUsername(username);
+				} else {
+					setAvatar(null);
+					setUsername("BOT");
+				}
+			} catch (error) {
+				console.warn("Failed to fetch profile for train", error);
+				setTimeout(() => {
+					fetchProfile().catch(() => {});
+				}, 1000);
+			}
+		};
+
+		fetchProfile();
+	}, [train.TrainData.ControlledBySteamID, train.TrainData.ControlledByXboxID]);
 
 	const { colorScheme } = useMantineColorScheme();
 

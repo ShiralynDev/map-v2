@@ -1,4 +1,4 @@
-import { getSteamProfileOrBot } from "@/components/steam";
+import { getSteamProfileOrBot, getXboxProfile } from "@/components/profile";
 import { readLocalStorageValue } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -27,11 +27,21 @@ const SelectedTrainPopup = () => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies:
 	useEffect(() => {
-		if (selectedTrain)
-			getSteamProfileOrBot(selectedTrain.TrainData.ControlledBySteamID).then( // support xbox players
-				// @ts-ignore
-				setData,
-			);
+		if (selectedTrain) {
+			if (selectedTrain.TrainData.ControlledBySteamID) {
+				getSteamProfileOrBot(selectedTrain.TrainData.ControlledBySteamID).then( // support xbox players
+					// @ts-ignore
+					setData,
+				);
+			} else if (selectedTrain.TrainData.ControlledByXboxID) {
+				getXboxProfile(selectedTrain.TrainData.ControlledByXboxID).then(
+					// @ts-ignore
+					setData,
+				)
+			} else {
+				setData([null, "BOT"]);
+			}
+		}
 	}, [selectedTrain]);
 
 	if (renderPopup === true) {
