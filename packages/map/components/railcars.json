@@ -898,7 +898,7 @@
 	{
 		"id": "163_021-9",
 		"apiName": "CD163/163_021-9",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -912,7 +912,7 @@
 	{
 		"id": "163_029-2",
 		"apiName": "CD163/163_029-2",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -926,7 +926,7 @@
 		{
 		"id": "163_030-0",
 		"apiName": "CD163/163_030-0",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -940,7 +940,7 @@
 	{
 		"id": "163_034-2",
 		"apiName": "CD163/163_034-2",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -954,7 +954,7 @@
 	{
 		"id": "163_035-9",
 		"apiName": "CD163/163_035-9",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -968,7 +968,7 @@
 	{
 		"id": "163_040-9",
 		"apiName": "CD163/163_040-9",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -982,7 +982,7 @@
 	{
 		"id": "163_041-7",
 		"apiName": "CD163/163_041-7",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -996,7 +996,7 @@
 	{
 		"id": "163_042-5",
 		"apiName": "CD163/163_042-5",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -1010,7 +1010,7 @@
 	{
 		"id": "163_043-3",
 		"apiName": "CD163/163_043-3",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -1024,7 +1024,7 @@
 	{
 		"id": "163_045-8",
 		"apiName": "CD163/163_045-8",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
@@ -1038,7 +1038,7 @@
 	{
 		"id": "163_046-6",
 		"apiName": "CD163/163_046-6",
-		"requiredDlcId": "2868050",
+		"requiredDlcId": "4009020",
 		"railcarType": "LOCOMOTIVE",
 		"typeIdentifier": "CD163",
 		"designation": "CD163",
