@@ -183,6 +183,11 @@ const TrainText = ({
 			Number.POSITIVE_INFINITY,
 		);
 
+	const trainAxles = usedRailcarInfo.reduce((total, info) => {
+		const axleCount = info.railcar.axleCount ?? 0;
+		return total + axleCount;
+	}, 0);
+
 	const showSignalInfo = readLocalStorageValue({
 		key: "showSignalInfo",
 		defaultValue: true,
@@ -238,6 +243,11 @@ const TrainText = ({
 			{wagonCount > 0 && (
 				<>
 					Wagons: x{wagonCount} <br />
+				</>
+			)}
+			{trainAxles > 0 && (
+				<>
+					Axles: x{trainAxles} <br />
 				</>
 			)}
 			Length / Weight: {trainLength}m / {trainWeight}t<br />

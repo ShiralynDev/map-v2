@@ -26,4 +26,6 @@ export type Railcar = {
 	width: number;
 	/** The maximum speed that can be driven with the railcar. */
 	maxSpeed: number;
+	/** The amound of axles on the railcar */
+	axleCount: number;
 };
