@@ -175,14 +175,6 @@ const TrainText = ({
 			.reduce((partial, current) => partial + current, 0),
 	);
 
-	// get the lowest speed of the consist, note that this is the consist vmax and not the timetable one
-	const minMaxSpeed = usedRailcarInfo
-		.map((info) => info.railcar.maxSpeed)
-		.reduce(
-			(minSpeed, currentSpeed) => Math.min(minSpeed, currentSpeed),
-			Number.POSITIVE_INFINITY,
-		);
-
 	const trainAxles = usedRailcarInfo.reduce((total, info) => {
 		const axleCount = info.railcar.axleCount ?? 0;
 		return total + axleCount;
@@ -265,8 +257,6 @@ const TrainText = ({
 					<br />
 				</>
 			)}
-			Vmax: {minMaxSpeed} km/h
-			<br />
 			{!minified && (
 				<>
 					<Title order={3}>Next Signal</Title>
