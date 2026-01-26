@@ -237,7 +237,7 @@ const TrainText = ({
 					Wagons: x{wagonCount} <br />
 				</>
 			)}
-			{trainAxles > 0 && (
+			{!minified && trainAxles > 0 && (
 				<>
 					Axles: x{trainAxles} <br />
 				</>
