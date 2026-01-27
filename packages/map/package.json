@@ -14,7 +14,7 @@
 		"@mantine/hooks": "^7.15.1",
 		"@mantine/spotlight": "^7.15.1",
 		"@next/third-parties": "^14.2.21",
-		"@simrail/types": "^0.0.4",
+		"@simrail/types": "github:ShiralynDev/simrail-types#main",
 		"@types/node": "20.14.12",
 		"@types/react": "18.0.26",
 		"@types/react-dom": "18.0.10",
