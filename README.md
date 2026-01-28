@@ -41,5 +41,5 @@ pnpm run dev
 
 This projects is a monorepo containing two projects:
 
-- `packages/home`: The main portal page hosted at [www.simrail.app](https://www.simrail.app) that redirects users to either EDR or the map.
-- `packages/map`: The interactive map project hosted at [map.simrail.app](https://map.simrail.app).
+- `packages/home`: The main portal page hosted at [www.simrail.app](https://www.simrail.app) (original repo, not this fork) that redirects users to either EDR or the map.
+- `packages/map`: The interactive map project hosted at [map.shiralyn.dev](https://map.shiralyn.dev).
