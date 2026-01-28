@@ -181,7 +181,7 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 					<div className={style.container}>
 						<Tooltip label="Our GitHub" position="right">
 							<a
-								href="https://github.com/simrail/map-v2"
+								href="https://github.com/ShiralynDev/map-v2"
 								rel="noreferrer"
 								target="_blank"
 								className={style.icon}
