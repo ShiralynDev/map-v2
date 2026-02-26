@@ -600,7 +600,7 @@
 		"axleCount": 6
 	},
 	{
-		"id": "_36WEd_001",
+		"id": "36WEd_001",
 		"apiName": "Impuls/36wed-001",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -615,7 +615,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_002",
+		"id": "36WEd_002",
 		"apiName": "Impuls/36wed-002",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -630,7 +630,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_003",
+		"id": "36WEd_003",
 		"apiName": "Impuls/36wed-003",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -645,7 +645,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_004",
+		"id": "36WEd_004",
 		"apiName": "Impuls/36wed-004",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -660,7 +660,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_005",
+		"id": "36WEd_005",
 		"apiName": "Impuls/36wed-005",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -675,7 +675,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_006",
+		"id": "36WEd_006",
 		"apiName": "Impuls/36wed-006",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -690,7 +690,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_007",
+		"id": "36WEd_007",
 		"apiName": "Impuls/36wed-007",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -705,7 +705,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_008",
+		"id": "36WEd_008",
 		"apiName": "Impuls/36wed-008",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -720,7 +720,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_009",
+		"id": "36WEd_009",
 		"apiName": "Impuls/36wed-009",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -735,7 +735,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_010",
+		"id": "36WEd_010",
 		"apiName": "Impuls/36wed-010",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -750,7 +750,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_011",
+		"id": "36WEd_011",
 		"apiName": "Impuls/36wed-011",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -765,7 +765,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_012",
+		"id": "36WEd_012",
 		"apiName": "Impuls/36wed-012",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -780,7 +780,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_013",
+		"id": "36WEd_013",
 		"apiName": "Impuls/36wed-013",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",
@@ -795,7 +795,7 @@
 		"axleCount": 2
 	},
 	{
-		"id": "_36WEd_014",
+		"id": "36WEd_014",
 		"apiName": "Impuls/36wed-014",
 		"requiredDlcId": "4380650",
 		"railcarType": "ELECTRIC_MULTIPLE_UNIT",

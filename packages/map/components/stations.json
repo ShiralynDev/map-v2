@@ -540,18 +540,6 @@
 		"id": ""
 	},
 	{
-		"Name": "Łódź Olechów",
-		"Prefix": "",
-		"DifficultyLevel": 0,
-		"MainImageURL": "",
-		"AdditionalImage1URL": "",
-		"AdditionalImage2URL": "",
-		"DispatchedBy": [],
-		"Latititude": 51.731575,
-		"Longitude": 19.600367,
-		"id": ""
-	},
-	{
 		"Name": "Łódź Chojny",
 		"Prefix": "",
 		"DifficultyLevel": 0,
@@ -573,18 +561,6 @@
 		"DispatchedBy": [],
 		"Latititude": 51.769555,
 		"Longitude": 19.469606,
-		"id": ""
-	},
-	{
-		"Name": "Łódź Marysin",
-		"Prefix": "",
-		"DifficultyLevel": 0,
-		"MainImageURL": "",
-		"AdditionalImage1URL": "",
-		"AdditionalImage2URL": "",
-		"DispatchedBy": [],
-		"Latititude": 51.800168,
-		"Longitude": 19.486153,
 		"id": ""
 	},
 	{
