@@ -94,5 +94,17 @@
 		"Latititude": 51.741028,
 		"Longitude": 19.617146,
 		"id": "Gałkówek"
+	}, 
+	{
+		"Name": "Łódź Marysin",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.800168,
+		"Longitude": 19.486153,
+		"id": "Łódź Widzew"
 	}
 ]
