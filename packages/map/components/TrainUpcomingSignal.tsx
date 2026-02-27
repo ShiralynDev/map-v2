@@ -57,6 +57,10 @@ const getSignalState = (signalSpeed: number | string): string | null => {
 		return "limited60";
 	}
 
+	if (typeof signalSpeed === "number" && signalSpeed <= 80) {
+		return "limited80";
+	}
+
 	if (typeof signalSpeed === "number" && signalSpeed <= 100) {
 		return "limited100";
 	}
