@@ -9,10 +9,18 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
 	const [servers, setServers] = useState<Server[] | null>(null);
+	const [server404, setServer404] = useState<Boolean>(false);
 
 	function getServers() {
 		fetch("https://panel.simrail.eu:8084/servers-open")
-			.then((res) => res.json())
+			.then((res) => { 
+				if (!res.ok) {
+					setServer404(true);
+					throw new Error(`HTTP ${res.status}`);	
+				}
+				setServer404(false);
+				return res.json();
+			})
 			.then((stations) => {
 				let serversData: Server[] = stations.data;
 
@@ -38,8 +46,11 @@ export default function Home() {
 					}
 					return a.ServerCode.localeCompare(b.ServerCode);
 				});
-
 				setServers(serversData);
+			})
+			.catch((err) => {
+				console.error("Failed to load servers: ", err);
+				setServers(null);
 			});
 	}
 
@@ -75,7 +86,8 @@ export default function Home() {
 			<TopNavigation disableMapFeatures={true} />
 			<main className={styles.main}>
 				<h1 className={styles.title}>Select your server</h1>
-				{!servers && "Loading servers..."}
+				{server404 && "Failed to load servers, retrying (API might be down)"}
+				{!servers && !server404 && "Loading servers..."}
 				<div className={styles.serverList}>
 					{servers?.map((server: Server) => {
 						return (
