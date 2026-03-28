@@ -26,6 +26,14 @@ export const RemoteStationMarker = ({ station }: StationMarkerProps) => {
 			}}
 		>
 			<Popup>
+				<img
+					src={station.MainImageURL}
+					alt={station.Name}
+					width={200}
+					height={86}
+					style={{ borderRadius: "6px" }}
+				/>
+				<br />
 				{station.Name}
 				<br />
 				Controlled from: {station.id}
