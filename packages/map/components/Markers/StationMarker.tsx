@@ -7,6 +7,7 @@ import { Marker, Popup, Tooltip } from "react-leaflet";
 import type { ProfileResponse } from "types/SteamProfile";
 import type { XboxProfileResponse } from "types/XboxProfile";
 import stationsList from "../EDR_station.json";
+import styles from "../../styles/popups.module.css";
 
 type StationMarkerProps = {
 	station: Station;
@@ -100,22 +101,21 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 				},
 			}}
 		>
-			<Popup>
-				<img
-					src={station.MainImageURL}
-					alt={station.Name}
-					width={200}
-					height={86}
-					style={{ borderRadius: "6px" }}
-				/>
-				<br />
-				<Space h="sm" />
-				Station: {station.Name}
-				<br />
-				User: {username}
-				<br />
-				Difficulty: {station.DifficultyLevel}
-				<br />
+			<Popup closeButton={false} className={styles.mapPopup}>
+				<div className={styles.popupInner}>
+					<img
+						src={station.MainImageURL}
+						alt={station.Name}
+						width={200}
+						height={86}
+						className={styles.popupImage}
+					/>
+					<br />
+					<strong>{station.Name} ({station.DifficultyLevel}/5)</strong>
+					<br />
+					Dispatcher: {username}
+					<br />
+				</div>
 			</Popup>
 			<Tooltip offset={[0, 20]} direction={"bottom"} permanent={true}>
 				{station.Name}

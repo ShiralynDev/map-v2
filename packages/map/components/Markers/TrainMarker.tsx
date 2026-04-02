@@ -7,6 +7,7 @@ import { Popup, Tooltip, useMapEvents } from "react-leaflet";
 import ReactLeafletDriftMarker from "react-leaflet-drift-marker";
 import { useSelectedTrain } from "../../contexts/SelectedTrainContext";
 import TrainText from "../TrainText";
+import styles from "../../styles/popups.module.css";
 
 type TrainMarkerProps = {
 	train: Train;
@@ -87,13 +88,15 @@ const TrainMarker = ({ train }: TrainMarkerProps) => {
 				mouseup: () => setSelectedTrain(train),
 			}}
 		>
-			<Popup>
+			<Popup closeButton={false} className={styles.trainMapPopup}>
+				<div className={styles.popupInner}>
 				<TrainText
 					train={train}
 					username={username}
 					avatar={avatar}
 					minified={true}
 				/>
+				</div>
 			</Popup>
 
 			<Tooltip

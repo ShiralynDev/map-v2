@@ -1,0 +1,29 @@
+.mapPopup :global(.leaflet-popup-content-wrapper) {
+	padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mapPopup :global(.leaflet-popup-content) {
+	margin: 0;
+}
+
+.trainMapPopup :global(.leaflet-popup-content-wrapper) {
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.trainMapPopup :global(.leaflet-popup-content) {
+	margin: 0;
+}
+
+.popupInner {
+	padding: 7.5px;
+}
+
+.popupImage {
+	border-radius: 6px;
+}
