@@ -111,9 +111,11 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 						className={styles.popupImage}
 					/>
 					<br />
-					<strong>{station.Name} ({station.DifficultyLevel}/5)</strong>
+					<strong>{station.Name}</strong>
 					<br />
 					Dispatcher: {username}
+					<br />
+					Difficulty: {station.DifficultyLevel}/5
 					<br />
 				</div>
 			</Popup>
