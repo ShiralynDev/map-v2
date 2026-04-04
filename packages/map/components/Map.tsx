@@ -307,7 +307,7 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 						name="Remote dispatch stations"
 					>
 						<LayerGroup>
-							<RemoteStations />
+							<RemoteStations stations={stations}/>
 						</LayerGroup>
 					</LayersControl.Overlay>
 
