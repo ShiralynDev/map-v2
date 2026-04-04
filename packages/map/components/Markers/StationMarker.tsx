@@ -69,6 +69,12 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 
 	if (!username) return null;
 
+	let difficultyString = "";
+	for (let i = 0; i < station.DifficultyLevel; i++) 
+		difficultyString += "★";
+	while (difficultyString.length < 5)
+		difficultyString += "☆";
+
 	return (
 		<Marker
 			key={station.id}
@@ -111,11 +117,9 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 						className={styles.popupImage}
 					/>
 					<br />
-					<strong>{station.Name}</strong>
+					<strong>{station.Name} {difficultyString}</strong>
 					<br />
 					Dispatcher: {username}
-					<br />
-					Difficulty: {station.DifficultyLevel}/5
 					<br />
 				</div>
 			</Popup>
