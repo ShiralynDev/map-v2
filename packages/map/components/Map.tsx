@@ -268,24 +268,6 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 					</LayersControl.Overlay>
 
 					<LayersControl.Overlay
-						checked={localStorage.getItem("layer-mainline-signals") === "true"}
-						name="Mainline signals"
-					>
-						<LayerGroup>
-							<MainlineSignals />
-						</LayerGroup>
-					</LayersControl.Overlay>
-
-					<LayersControl.Overlay
-						checked={localStorage.getItem("layer-other-signals") === "true"}
-						name="Other signals"
-					>
-						<LayerGroup>
-							<OtherSignals />
-						</LayerGroup>
-					</LayersControl.Overlay>
-
-					<LayersControl.Overlay
 						checked={
 							localStorage.getItem("layer-dispatch stations") === null ||
 							localStorage.getItem("layer-dispatch stations") === "true"
