@@ -257,13 +257,35 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 				<LayersControl position="bottomright" collapsed={false}>
 					<LayersControl.Overlay
 						checked={
-							localStorage.getItem("layer-trains") === null ||
-							localStorage.getItem("layer-trains") === "true"
+							localStorage.getItem("layer-player trains") === null ||
+							localStorage.getItem("layer-player trains") === "true"
 						}
-						name="Trains"
+						name="Player driven trains"
 					>
 						<LayerGroup>
-							<TrainsList trains={trains} />
+							{
+								(() => {
+									const playerTrains = trains.filter((train) => train.Type === "user");
+									return <TrainsList trains={playerTrains} />;
+								})()
+							}
+						</LayerGroup>
+					</LayersControl.Overlay>
+
+					<LayersControl.Overlay
+						checked={
+							localStorage.getItem("layer-bot trains") === null ||
+							localStorage.getItem("layer-bot trains") === "true"
+						}
+						name="Bot driven trains"
+					>
+						<LayerGroup>
+							{
+								(() => {
+									const botTrains = trains.filter((train) => train.Type !== "user");
+									return <TrainsList trains={botTrains} />;
+								})()
+							}
 						</LayerGroup>
 					</LayersControl.Overlay>
 
