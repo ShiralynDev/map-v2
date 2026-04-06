@@ -237,11 +237,6 @@ const TrainText = ({
 					Wagons: x{wagonCount} <br />
 				</>
 			)}
-			{!minified && trainAxles > 0 && (
-				<>
-					Axles: x{trainAxles} <br />
-				</>
-			)}
 			Length / Weight: {trainLength}m / {trainWeight}t<br />
 			{!minified && <Title order={3}>Route </Title>}
 			{train.StartStation} - {train.EndStation}
