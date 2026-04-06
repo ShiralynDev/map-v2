@@ -254,7 +254,7 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 					attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | &copy; <a href="http://www.openrailwaymap.org/">OpenRailwayMap</a> | <a href = "https://discord.gg/d65Q8gWM5W" > Created by SimRail France 🇫🇷 Community </a>'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
-				<LayersControl position="bottomright" collapsed={false}>
+				<LayersControl position="bottomright">
 					<LayersControl.Overlay
 						checked={
 							localStorage.getItem("layer-player trains") === null ||
