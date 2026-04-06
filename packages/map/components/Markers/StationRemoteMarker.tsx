@@ -99,7 +99,7 @@ export const RemoteStationMarker = ({ station, mainStation }: StationMarkerProps
 				</div>
 			</Popup>
 			<Tooltip offset={[0, 10]} direction={"bottom"} permanent={true}>
-					LCS: {station.Name}
+					PZS: {station.Name}
 			</Tooltip>
 		</Marker>
 	);
