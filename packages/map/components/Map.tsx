@@ -291,27 +291,43 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 
 					<LayersControl.Overlay
 						checked={
-							localStorage.getItem("layer-dispatch stations") === null ||
-							localStorage.getItem("layer-dispatch stations") === "true"
+							localStorage.getItem("layer-player dispatch stations") === null ||
+							localStorage.getItem("layer-player dispatch stations") === "true"
 						}
-						name="Dispatch stations"
+						name="Player dispatch stations"
 					>
 						<LayerGroup>
-							{stations.map((station) => (
-								<StationMarker key={station.Name} station={station} />
-							))}
+							{stations
+								.filter((s) => {
+									const d = s.DispatchedBy?.[0];
+									const hasSteam = d?.SteamId && d.SteamId !== "null";
+									const hasXbox = (d as any)?.XboxId && (d as any).XboxId !== "null";
+									return !!(hasSteam || hasXbox);
+								})
+								.map((station) => (
+									<StationMarker key={station.Name} station={station} />
+								))}
 						</LayerGroup>
 					</LayersControl.Overlay>
 
 					<LayersControl.Overlay
 						checked={
-							localStorage.getItem("layer-remote dispatch stations") === null ||
-							localStorage.getItem("layer-remote dispatch stations") === "true"
+							localStorage.getItem("layer-bot dispatch stations") === null ||
+							localStorage.getItem("layer-bot dispatch stations") === "true"
 						}
-						name="Remote dispatch stations"
+						name="Bot dispatch stations"
 					>
 						<LayerGroup>
-							<RemoteStations stations={stations}/>
+							{stations
+								.filter((s) => {
+									const d = s.DispatchedBy?.[0];
+									const hasSteam = d?.SteamId && d.SteamId !== "null";
+									const hasXbox = (d as any)?.XboxId && (d as any).XboxId !== "null";
+									return !(hasSteam || hasXbox);
+								})
+								.map((station) => (
+									<StationMarker key={station.Name} station={station} />
+								))}
 						</LayerGroup>
 					</LayersControl.Overlay>
 
@@ -362,6 +378,30 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 						</LayerGroup>
 					</LayersControl.Overlay>
 				</LayersControl>
+
+				{(() => {
+					const playerVisible =
+						localStorage.getItem("layer-player dispatch stations") === null ||
+						localStorage.getItem("layer-player dispatch stations") === "true";
+					const botVisible =
+						localStorage.getItem("layer-bot dispatch stations") === null ||
+						localStorage.getItem("layer-bot dispatch stations") === "true";
+
+					if (!playerVisible && !botVisible) return null;
+
+					const visible = new Set<string>();
+					stations.forEach((s) => {
+						const d = s.DispatchedBy?.[0];
+						const hasSteam = d?.SteamId && d.SteamId !== "null";
+						const hasXbox = (d as any)?.XboxId && (d as any).XboxId !== "null";
+
+						if (playerVisible && (hasSteam || hasXbox)) visible.add(s.Name);
+						if (botVisible && !(hasSteam || hasXbox)) visible.add(s.Name);
+					});
+
+					return <RemoteStations stations={stations} visibleMainStations={visible} />;
+				})()}
+
 				<SpotlightSearch stations={stations} trains={trains} />
 			</MapContainer>
 		</>
