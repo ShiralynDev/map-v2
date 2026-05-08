@@ -23,9 +23,9 @@ function formatSignalDistance(distanceMeters: number): string {
 	}
 	if (distanceMeters > 1000) {
 		const distanceKilometers = (distanceMeters / 1000).toFixed(1);
-		return `${distanceKilometers} km`;
+		return `${distanceKilometers}km`;
 	}
-	return `${distanceMeters.toFixed(1)} m`;
+	return `${distanceMeters.toFixed(1)}m`;
 }
 
 function formatSignalSpeed(rawSpeedLimit: number): string {
