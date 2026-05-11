@@ -1,23 +1,23 @@
 [
 	{
 		"code": "fr1",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "de2",
-		"offsetSeconds": -15570001
+		"offsetSeconds": -18000
 	},
 	{
 		"code": "de1",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "int2",
-		"offsetSeconds": -15548401
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "de3",
-		"offsetSeconds": -7783204
+		"offsetSeconds": -7200
 	},
 	{
 		"code": "int1",
@@ -25,54 +25,54 @@
 	},
 	{
 		"code": "int4",
-		"offsetSeconds": -7772400
+		"offsetSeconds": 43200
 	},
 	{
 		"code": "pl1",
-		"offsetSeconds": -15570000
+		"offsetSeconds": -32400
 	},
 	{
 		"code": "int3",
-		"offsetSeconds": -28801
+		"offsetSeconds": -28800
 	},
 	{
 		"code": "int6",
-		"offsetSeconds": 28798
+		"offsetSeconds": 0
 	},
 	{
 		"code": "pl3",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "int5",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "pl2",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "pl4",
-		"offsetSeconds": -7783200
+		"offsetSeconds": 0
 	},
 	{
 		"code": "cz1",
-		"offsetSeconds": 3600
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "int9",
-		"offsetSeconds": 0
+		"offsetSeconds": -10800
 	},
 	{
 		"code": "xbx1",
-		"offsetSeconds": 0
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "xbx2",
-		"offsetSeconds": 0
+		"offsetSeconds": 7200
 	},
 	{
 		"code": "xbx3",
-		"offsetSeconds": 0
+		"offsetSeconds": -28800
 	}
 ]
