@@ -38,12 +38,6 @@ export default function Home() {
 					if (!serverSettings1.favorite && serverSettings2.favorite) {
 						return 1;
 					}
-					if (b.ServerName.startsWith("FR")) {
-						return 1;
-					}
-					if (a.ServerName.startsWith("FR")) {
-						return -1;
-					}
 					return a.ServerCode.localeCompare(b.ServerCode);
 				});
 				setServers(serversData);
