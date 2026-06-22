@@ -280,7 +280,7 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 					/>
 				)}
 
-				<LayersControl position="bottomright" collapsed={false}>
+				<LayersControl position="bottomright" collapsed={true}>
 					<LayersControl.Overlay
 						checked={
 							localStorage.getItem("layer-player trains") === null ||
