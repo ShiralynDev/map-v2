@@ -198,17 +198,6 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 							</a>
 						</Tooltip>
 
-						<Tooltip label="Our Discord (French)" position="right">
-							<a
-								href="https://discord.gg/d65Q8gWM5W"
-								rel="noreferrer"
-								target="_blank"
-								className={[style.icon, style.discord].join(" ")}
-							>
-								<FaDiscord color="white" size={32} />
-							</a>
-						</Tooltip>
-
 						{map && (
 							<>
 								<Tooltip label="Zoom in" position="right">
