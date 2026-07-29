@@ -25,11 +25,12 @@ export const StationMarker = ({ station }: StationMarkerProps) => {
 			if (station.DispatchedBy[0]) {
 				if (station.DispatchedBy[0].SteamId != null) {
 					const avatarRequest = await fetch(
-						`https://simrail-edr.emeraldnetwork.xyz/steam/${station.DispatchedBy[0].SteamId}`,
+						`https://panel.simrail.eu:8084/users-open/${station.DispatchedBy[0].SteamId}`,
 					);
-					const profile: ProfileResponse = await avatarRequest.json();
-					setAvatar(profile.avatar);
-					setUsername(profile.personaname);
+					const response = await avatarRequest.json();
+					const profile = response.data && response.data.length > 0 ? response.data[0] : null;
+					setAvatar(profile?.SteamInfo?.avatar);
+					setUsername(profile?.SteamInfo?.personaname ?? "Unknown");
 				} else if (station.DispatchedBy[0].XboxId != null) {
 					const avatarRequest = await fetch(
 						`https://panel.simrail.eu:8084/users-open/${station.DispatchedBy[0].XboxId}`,

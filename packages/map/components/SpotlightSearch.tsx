@@ -57,7 +57,6 @@ export default function SpotlightSearch({
 
 		const userIDs = [];
 		const platforms = [];
-		console.log(trains)
 		for (let i = 0; i < trains.length; i++) {
 			if (trains[i].Type === "user" && trains[i] != null) {
 				if (trains[i].TrainData.ControlledBySteamID) {
@@ -71,7 +70,6 @@ export default function SpotlightSearch({
 			}
 		}
 		for (let i = 0; i < stations.length; i++) {
-			console.log(stations[i])
 			if (stations[i].DispatchedBy[0] && stations[i].DispatchedBy[0].SteamId != "null") {
 				userIDs.push(stations[i].DispatchedBy[0].SteamId);
 				platforms.push("steam");

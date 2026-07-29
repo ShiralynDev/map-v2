@@ -1,10 +1,17 @@
 import type { ProfileResponse } from "types/SteamProfile";
 import type { XboxProfileResponse } from "types/XboxProfile";
 
-const getSteamProfileInfos = (steamId: string): Promise<ProfileResponse> =>
-	fetch(`https://simrail-edr.emeraldnetwork.xyz/steam/${steamId}`).then((r) =>
-		r.json(),
+const getSteamProfileInfos = async (steamId: string) => {
+	const avatarRequest = await fetch(
+		`https://panel.simrail.eu:8084/users-open/${steamId}`,
 	);
+	const response = await avatarRequest.json();
+	
+	return {
+		avatar: response.data[0].SteamInfo.avatar,
+		personaname: response.data[0].SteamInfo.personaname,
+	} satisfies ProfileResponse;
+};
 
 export async function getSteamProfileOrBot(steamId: string | null | undefined) {
 	if (steamId)
