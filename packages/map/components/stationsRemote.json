@@ -190,5 +190,17 @@
 		"Latititude": 52.011974085900285,
 		"Longitude": 19.7918697023697,
 		"id": "Głowno"
+	},
+	{
+		"Name": "Łódź Dąbrowa",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.73541821735078,
+		"Longitude": 19.51054170177146,
+		"id": "Łódź Widzew"
 	}
 ]
