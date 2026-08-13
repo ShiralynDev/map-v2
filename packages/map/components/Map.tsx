@@ -178,8 +178,8 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 		<>
 			<SelectedTrainPopup />
 			<MapContainer
-				center={[50.270908, 19.039993]}
-				zoom={10}
+				center={[51.21140076948288, 19.800330357549555]}
+				zoom={8}
 				ref={setMap}
 				scrollWheelZoom={true}
 				zoomControl={false}
