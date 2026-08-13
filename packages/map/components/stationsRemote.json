@@ -107,7 +107,7 @@
 		"Longitude": 19.486153,
 		"id": "Łódź Widzew"
 	},
-		{
+	{
 		"Name": "Słotwiny",
 		"Prefix": "",
 		"DifficultyLevel": 0,
@@ -118,5 +118,77 @@
 		"Latititude": 51.72631,
 		"Longitude": 19.83242,
 		"id": "Żakowice Południowe"
+	},
+	{
+		"Name": "Zgierz Kontrewers",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.86480304054802,
+		"Longitude": 19.340561567129637,
+		"id": "Zgierz Północ"
+	},
+	{
+		"Name": "Chociszew",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.92412130555129,
+		"Longitude": 19.26693326853561,
+		"id": "Zgierz Północ"
+	},
+	{
+		"Name": "Ozorków",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.972512357386215,
+		"Longitude": 19.26630195091895,
+		"id": "Witonia"
+	},
+	{
+		"Name": "Łęczyca",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.049413947025435,
+		"Longitude": 19.193623047997132,
+		"id": "Witonia"
+	},
+	{
+		"Name": "Stryków",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.9104090272191,
+		"Longitude": 19.594319107325635,
+		"id": "Glinnik"
+	},
+	{
+		"Name": "Domaniewice",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.9104090272191,
+		"Longitude": 19.594319107325635,
+		"id": "Głowno"
 	}
 ]
