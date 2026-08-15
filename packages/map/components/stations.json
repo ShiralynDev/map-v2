@@ -802,5 +802,77 @@
 		"Latititude": 51.629814,
 		"Longitude": 19.242731,
 		"id": ""
+	},
+	{
+		"Name": "Bednary",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.10518593035574,
+		"Longitude": 20.063468136771455,
+		"id": ""
+	},
+	{
+		"Name": "Jackowice",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.15712897976941,
+		"Longitude": 19.79480799387442,
+		"id": ""
+	},
+	{
+		"Name": "Florek",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.25607925660361,
+		"Longitude": 19.317491678626222,
+		"id": ""
+	},
+	{
+		"Name": "Stara Wieś",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.22793112720462,
+		"Longitude": 19.426355295231442,
+		"id": ""
+	},
+	{
+		"Name": "Ostrowy",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.299447729227246,
+		"Longitude": 19.191417170233628,
+		"id": ""
+	},
+	{
+		"Name": "Krzewie",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.235697575074866,
+		"Longitude": 19.17013660425724,
+		"id": ""
 	}
 ]
