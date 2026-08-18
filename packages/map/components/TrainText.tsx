@@ -226,15 +226,19 @@ const TrainText = ({
 					{getTrainDisplayName(train.TrainName, train.TrainNoLocal)}{" "}
 				</Title>
 			)}
-			Locomotive: {tractionUnitInfo} <br />
+			{wagonCount > 0 && (
+				<>
+					Trainset: {tractionUnitInfo} + {wagonCount} wagons <br />
+				</>
+			)}
+			{wagonCount <= 0 && (
+				<>
+					Trainset: {tractionUnitInfo} <br />
+				</>
+			)}
 			{additionalUnits.length > 0 && (
 				<>
 					Additional Units: {additionalUnitsInfo} <br />
-				</>
-			)}
-			{wagonCount > 0 && (
-				<>
-					Wagons: x{wagonCount} <br />
 				</>
 			)}
 			Length / Weight: {trainLength}m / {trainWeight}t<br />
