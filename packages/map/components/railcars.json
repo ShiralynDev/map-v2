@@ -2010,6 +2010,21 @@
 		"axleCount": 8
 	},
 	{
+		"id": "434Z_33514565217-8",
+		"apiName": "629Z/434Z_33514565217-8",
+		"requiredDlcId": "2868050",
+		"railcarType": "WAGON",
+		"typeIdentifier": "434Z",
+		"designation": "Sgns",
+		"producer": "EKK Wagon",
+		"yearsOfProduction": "2013",
+		"weight": 18.875,
+		"length": 19.7375,
+		"width": 3,
+		"maxSpeed": 120,
+		"axleCount": 8
+	},
+	{
 		"id": "441V-31516635283-3",
 		"apiName": "441V/441V_31516635283-3",
 		"requiredDlcId": "2868050",
