@@ -1,5 +1,8 @@
 # SimRail Map
 
+## THIS IS A FORK
+Please note that this is a fork made due to the amount of AI use in the original project, the original project can be found at https://github.com/simrail/map-v2
+
 ## Overview
 
 Welcome to the **SimRail Map** project! 🌟
@@ -25,7 +28,7 @@ Welcome to the **SimRail Map** project! 🌟
 
 1. Clone the Repository:
 ```bash
-git clone https://github.com/simrail/map-v2.git
+git clone https://github.com/ShiralynDev/map-v2.git
 cd map-v2
 ```
 2. Install Dependencies:
@@ -41,5 +44,5 @@ pnpm run dev
 
 This projects is a monorepo containing two projects:
 
-- `packages/home`: The main portal page hosted at [www.simrail.app](https://www.simrail.app) (original repo, not this fork) that redirects users to either EDR or the map.
+- `packages/home`: The main portal page that redirects users to either EDR or the map.
 - `packages/map`: The interactive map project hosted at [map.shiralyn.dev](https://map.shiralyn.dev).
