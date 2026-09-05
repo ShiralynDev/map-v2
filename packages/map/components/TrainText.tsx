@@ -269,7 +269,7 @@ const TrainText = ({
 						align="center"
 						justify="center"
 						py={16}
-						direction={"column"}
+						direction={"row"}
 					>
 						{/* <Button w={"100%"}>View Stops</Button> */}
 						<Button
@@ -277,9 +277,19 @@ const TrainText = ({
 							target="_blank"
 							href={`https://edr.simrail.app/${id}/train/${train.TrainNoLocal}`}
 							color="orange"
-							w={"100%"}
+							w={"50%"}
 						>
-							See on EDR
+							Open in EDR
+						</Button>
+
+						<Button
+							component="a"
+							target="_blank"
+							href={`https://srtt.sokora.dev/${id}/train/${train.TrainNoLocal}.html`}
+							color="orange"
+							w={"50%"}
+						>
+							Open in SRTT
 						</Button>
 					</Flex>
 				</>
