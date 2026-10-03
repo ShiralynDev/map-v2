@@ -199,8 +199,32 @@
 		"AdditionalImage1URL": "",
 		"AdditionalImage2URL": "",
 		"DispatchedBy": [],
-		"Latititude": 51.73541821735078,
-		"Longitude": 19.51054170177146,
+		"Latititude": 51.745920051818324,
+		"Longitude": 19.51273880624528,
 		"id": "Łódź Widzew"
+	},
+	{
+		"Name": "Łódź Żabieniec",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "https://wiki.simrail.eu/stations/poland/electronical/lodz-zabieniec/lz_platform_1.png",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 51.79356079661347,
+		"Longitude": 19.40733623797664,
+		"id": "Zgierz"
+	},
+	{
+		"Name": "Żychlin",
+		"Prefix": "",
+		"DifficultyLevel": 0,
+		"MainImageURL": "https://wiki.simrail.eu/stations/poland/electronical/lodz-zabieniec/lz_platform_1.png",
+		"AdditionalImage1URL": "",
+		"AdditionalImage2URL": "",
+		"DispatchedBy": [],
+		"Latititude": 52.21314221535506,
+		"Longitude": 19.617592303207363,
+		"id": "Jackowice"
 	}
 ]
