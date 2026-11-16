@@ -134,7 +134,7 @@ const LeaftletMap = ({ serverId }: MapProps) => {
 
 		const interval1 = setInterval(() => {
 			getTrains();
-		}, 2000);
+		}, 5000);
 
 		const interval2 = setInterval(() => {
 			getStations();
